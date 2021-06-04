@@ -100,14 +100,6 @@ namespace GitHubApiApp.Models
             }
         }
 
-
-        /// <summary>
-        /// // нумерация примеров – сквозная в пределах раздела. Т.е. 2.1. Название 
-        /// – с большой буквы. Пустые строки должны быть перед примером, после подписи и
-        /// между примером и подписью. Для примеров кода есть специальный стиль З_Программа. 
-        /// Стиль для подписи примеров – как и для рисунков, З_РТП.
-        /// </summary>
-
         public static void CreateWordDocument(object filename, object SaveAs, List<FileData> photo, List<FileData> files, Dictionary<string, string> data)
         {
             Application wordApp = new Application();
