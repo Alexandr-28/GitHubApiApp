@@ -54,32 +54,32 @@ namespace GitHubApiApp.Models
             };
             RectangleF rectRbCheck = new RectangleF()
             {
-                X = rectRbBorder.X + ((rectRbBorder.Width - rbCheckSize) / 2), //Center
+                X = rectRbBorder.X + ((rectRbBorder.Width - rbCheckSize) / 2), 
                 Y = (this.Height - rbCheckSize) / 2, //Center
                 Width = rbCheckSize,
                 Height = rbCheckSize
             };
-            //Drawing
+            
             using (Pen penBorder = new Pen(checkedColor, 1.6F))
             using (SolidBrush brushRbCheck = new SolidBrush(checkedColor))
             using (SolidBrush brushText = new SolidBrush(this.ForeColor))
             {
-                //Draw surface
+
                 graphics.Clear(this.BackColor);
-                //Draw Radio Button
+  
                 if (this.Checked)
                 {
-                    graphics.DrawEllipse(penBorder, rectRbBorder);//Circle border
-                    graphics.FillEllipse(brushRbCheck, rectRbCheck); //Circle Radio Check
+                    graphics.DrawEllipse(penBorder, rectRbBorder);
+                    graphics.FillEllipse(brushRbCheck, rectRbCheck); 
                 }
                 else
                 {
                     penBorder.Color = uncheckedColor;
-                    graphics.DrawEllipse(penBorder, rectRbBorder); //Circle border
+                    graphics.DrawEllipse(penBorder, rectRbBorder); 
                 }
                 //Draw text
                 graphics.DrawString(this.Text, this.Font, brushText,
-                    rbBorderSize + 8, (this.Height - TextRenderer.MeasureText(this.Text, this.Font).Height) / 2);//Y=Center
+                    rbBorderSize + 8, (this.Height - TextRenderer.MeasureText(this.Text, this.Font).Height) / 2);
             }
         }
         protected override void OnResize(EventArgs e)
