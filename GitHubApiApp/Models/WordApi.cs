@@ -34,10 +34,12 @@ namespace GitHubApiApp.Models
                     false, false, false);
             }
             else
+            {
                 wordApp.Selection.Find.Execute(ref ToFindText,
                     true, true, false, false, false, true,
                     1, false, ref replaceWithText, 2, false,
                     false, false, false);
+            }
         }
 
         private static void InsertPhoto(Application wordApp, Document document, List<FileData> photo)
@@ -69,7 +71,9 @@ namespace GitHubApiApp.Models
                 }
             }
             else
+            {
                 FindAndReplace(wordApp, "<image>", "");
+            }
         }
 
         private static void InsertFiles(Application wordApp, Document document, List<FileData> files)
